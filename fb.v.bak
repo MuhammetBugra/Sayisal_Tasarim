@@ -1,0 +1,11 @@
+module fb(
+input [3:0] A,B,
+input C_in,
+output [3:0] S,
+output C_4 );
+wire C_1,C_2,C_3;
+tt tt_0(S[0],C_1,A[0],.y(y[0]),.z(c0));
+tt tt_1(S[1],C_2,A[1],.y(y[1]),.z(c1));
+tt tt_2(S[2],C_3,A[2],.y(y[2]),.z(c2));
+tt tt_3(S[3],C_4,A[3],.y(y[3]),.z(c3));
+endmodule 
