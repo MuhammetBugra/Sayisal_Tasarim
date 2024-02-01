@@ -1,0 +1,8 @@
+module tt(s,c,x,y,z);
+input x,y,z;
+output s,c;
+wire h1,hs,h1c,h2,h2c;
+yt yt_0(.s(hs),.c(h1c),.x(x),.y(y));
+yt yt_1(.s(s),.c(h2c),.x(c),.y(hs));
+or(c,h1c,h2c);
+endmodule 

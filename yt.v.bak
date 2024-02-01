@@ -1,0 +1,10 @@
+module yt(s,c,x,y);
+input x,y;
+output s,c;
+wire w_1,w_2,w_3,w_4;
+wire not_x,not_y;
+not(not_x,x);
+not(not_y,y);
+and(c,x,y);
+xor(s,x,y);
+endmodule 
