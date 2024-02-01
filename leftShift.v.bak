@@ -1,0 +1,19 @@
+module leftShift(
+input [1:0] shift,
+input [7:0] I,
+output [7:0] out );
+
+wire [7:0] w;
+
+mul4x1 mul4x1_0({I[5],I[6],I[7],I[0]}, shift, w[0]);
+mul4x1 mul4x1_1({I[6],I[7],I[0],I[1]}, shift, w[1]);
+mul4x1 mul4x1_2({I[7],I[0],I[1],I[2]}, shift, w[2]);
+mul4x1 mul4x1_3({I[0],I[1],I[2],I[3]}, shift, w[3]);
+mul4x1 mul4x1_4({I[1],I[2],I[3],I[4]}, shift, w[4]);
+mul4x1 mul4x1_5({I[2],I[3],I[4],I[5]}, shift, w[5]);
+mul4x1 mul4x1_6({I[3],I[4],I[5],I[6]}, shift, w[6]);
+mul4x1 mul4x1_7({I[4],I[5],I[6],I[7]}, shift, w[7]);
+
+assign out = w;
+
+endmodule 
