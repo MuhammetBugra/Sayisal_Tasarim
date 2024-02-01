@@ -1,0 +1,13 @@
+module dec4x16(
+input A,B,C,E,
+output [15:0] D );
+
+wire [3:0] w;
+
+dec2x4 dec2x4_0(1'b1,A,B,w[3:0]);
+dec2x4 dec2x4_1(w[0],C,E,D[3:0]);
+dec2x4 dec2x4_2(w[1],C,E,D[7:4]);
+dec2x4 dec2x4_3(w[2],C,E,D[11:8]);
+dec2x4 dec2x4_4(w[3],C,E,D[15:12]);
+
+endmodule 

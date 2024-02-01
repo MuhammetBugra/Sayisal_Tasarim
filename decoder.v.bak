@@ -1,0 +1,25 @@
+module decoder(
+input [3:0] val,
+output reg a,b,c,d,e,f,g,outrange );
+
+wire [6:0] w;
+
+assign outrange = (val > 9'b1001) ? 1'b1 : 1'b0;
+
+assign w[0] = (val == 4'b0000) ? 1'b1 : 1'b0;
+assign w[1] = (val == 4'b0001) ? 1'b1 : 1'b0;
+assign w[2] = (val == 4'b0010) ? 1'b1 : 1'b0;
+assign w[3] = (val == 4'b0011) ? 1'b1 : 1'b0;
+assign w[4] = (val == 4'b0100) ? 1'b1 : 1'b0;
+assign w[5] = (val == 4'b0101) ? 1'b1 : 1'b0;
+assign w[6] = (val == 4'b0110) ? 1'b1 : 1'b0;
+
+or(a,w[0],w[3],w[4],w[5],w[6]);
+or(b,w[2],w[3],w[4],w[5],w[6]);
+or(c,w[0],w[1],w[2],w[3],w[4]);
+or(d,w[0],w[1],w[3],w[4],w[5],w[6]);
+or(e,w[0],w[1],w[2],w[3],w[6]);
+or(f,w[0],w[1],w[2],w[6]);
+or(g,w[0],w[1],w[2],w[3],w[4],w[5]);
+
+endmodule

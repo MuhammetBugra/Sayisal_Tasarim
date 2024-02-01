@@ -1,0 +1,15 @@
+module decoder(
+input [3:0] val,
+output a,b,c,d,e,f,g,outrange );
+
+wire [6:0] w;
+
+or(a,w[0],w[3],w[4],w[5],w[6]);
+or(b,w[2],w[3],w[4],w[5],w[6]);
+or(c,w[0],w[1],w[2],w[3],w[4]);
+or(d,w[0],w[1],w[3],w[4],w[5],w[6]);
+or(e,w[0],w[1],w[2],w[3],w[6]);
+or(f,w[0],w[1],w[2],w[6]);
+or(g,w[0],w[1],w[2],w[3],w[4],w[5]);
+
+endmodule
